@@ -24,6 +24,9 @@ public class PredicateDemo {
           return false;
         };
 
+        Predicate<Integer> isLessThan20 = (number)->number<20;
+        //Predicate returns boolean
+
         Integer number1 = 100;
         boolean result = isPositive.test(number1); //true
 
@@ -38,10 +41,15 @@ public class PredicateDemo {
                 1,
                 "Test",
                 "Test",
-                LocalDate.parse("2020-01-01"),
+                LocalDate.parse("2022-01-01"),
                 true);
 
 
+        System.out.println("-------------------------");
+        System.out.println(isLeapYear.test(person));
+
+        System.out.println(isGreaterThanTen.and(isLessThan20).test(5)); //true
+        //.and / .or -> to combine 2 logics
 
     }
 }
